@@ -1,0 +1,93 @@
+{% extends "exp1econ/Base.html" %}
+{% load staticfiles otree %}
+
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+
+{% block content %}
+    {% tracking_time %}  
+    {% tracking_focus %}
+	
+	<div id="Question0">
+    {% formfield player.Env_q_individual %}
+    </font>
+    </div>
+    <div>
+    <font size="3">
+	
+	<div id="Question1">
+{% formfield player.Env_question with label="How worried are you about the climate change?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">
+    
+    <div id="Question2">
+{% formfield player.Financial_literacya with label="Suppose you had $100 in a savings account and the interest rate was 2% per year. After 2 years, how much do you think you would have in the account if you left the money to grow?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">
+    
+    
+    <div id="Question3">
+{% formfield player.Financial_literacyc with label="Please tell us whether this statement is true or false. ‘Buying a stock of a company usually provides a safer return than a stock mutual fund’." %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+    
+	<div id="Question4">
+{% formfield player.Financial_literacyd with label="Do you have or had an investment account?" %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+	
+	<div id="Question5">
+{% formfield player.Financial_literacye with label="What is your knowledge level about financial markets?" %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+	
+	<div id="Question6">
+{% formfield player.Financial_literacyf with label="What is your experience level regarding financial markets?" %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+	
+<br/>
+
+    <div id="next">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="next_page()">
+    </div>
+
+    
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script type="text/javascript">
+  function next_page(){
+        if ($("#id_Financial_literacyf_0").is(":checked") || $("#id_Financial_literacyf_1").is(":checked") || $("#id_Financial_literacyf_2").is(":checked") || $("#id_Financial_literacyf_3").is(":checked")){
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+  }
+    
+    </script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "groupA/Base.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+   
+<div class="box effect7"> 
+    <font size="4">  
+    <p align="justify">
+      <p>The experiment consists of two parts - <b>the decision making part</b> and the <b>questionnaire</b>.
+      You will be asked to watch a video of less than 50 seconds, then to make a couple of decisions in the decision making part and to answer some questions in the questionnaire. <p>
+      
+      <p>On each page in the decision making part, you will be asked to choose between portfolios in this form:<br />
+      Please choose between these two portfolios:<br />
+      &#9675 Portfolio 1: Environmental score 17%, return 9%.  <br />
+      &#9675 Portfolio 2: Environmental score 0%, return 10%. <br />
+      <p>
+      
+      <p>There are no correct or incorrect answers. We just want to measure your preferences.<p>
+    
+
+    <p>
+        Click on the Next button to start playing.
+    </font>
+    </p>
+    <input type="hidden" name="time" value=0 id="id_my_times">
+  <div>
+    <br>
+    <input class="btn btn-primary btn-large btn-primary next-button" type="submit" onclick="fin()" value="Next">
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+  <script type="text/javascript">
+
+
+    var elapsed = 0;
+    var debut = new Date();
+    
+    function fin() {
+
+      var elapsed_ml =  (new Date() - debut)/1000;  // Exprimer en secondes plutôt qu'en milli-secondes
+      elapsed = Math.floor(0.5 + elapsed_ml); 
+      document.getElementById('id_my_times').value = elapsed;
+//      document.getElementById('form').submit();    // Inutile d'ajouter ceci ; ce ne serait utile que si on avait un truc du genre <button type='button' onclick="fin()">...
+
+    }
+    
+  </script>
+
+{% endblock %}

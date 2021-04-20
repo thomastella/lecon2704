@@ -1,0 +1,65 @@
+{% extends "groupA/Base.html" %}
+{% load staticfiles otree %}
+
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+
+{% block content %}
+
+    
+    <div id="Question2">
+{% formfield player.Financial_literacya with label="Suppose you had $100 in a savings account and the interest rate was 2% per year. After 2 years, how much do you think you would have in the account if you left the money to grow?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">
+    
+    
+    <div id="Question3">
+{% formfield player.Financial_literacyc with label="Please tell us whether this statement is true or false. ‘Buying a stock of a company usually provides a safer return than a stock mutual fund’." %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+    
+	<div id="Question4">
+{% formfield player.Financial_literacyd with label="Do you have or had an investment account?" %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+	
+	<div id="Question5">
+{% formfield player.Financial_literacye with label="What is your knowledge level about financial markets?" %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+	
+	<div id="Question6">
+{% formfield player.Financial_literacyf with label="What is your experience level regarding financial markets?" %}
+    </font>
+	 </div>
+    <div>
+    <font size="3">
+    </div>
+	
+<br/>
+
+
+{% next_button %}
+
+    
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

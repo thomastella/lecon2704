@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome to the project
+{% endblock %}
+
+{% block content %}
+
+<p>Hello ! Thank you very much for taking part in this project.The
+participants of the UCLouvin seminar LECON2704 have  put together
+three short exercises.</p>
+
+
+<p>Please answer the questions as completely and truthfully as you
+  can. Your responses will not be associated
+with you in any way. Data will be stored for a few months, and will be
+deleted by the end of July 2021.</p>
+
+
+<p>By clicking "next", you agree to take part in the project. We hope you
+will complete all the questions. But if you want to leave at anytime, you can
+simply exit the project by closing your browser.</p>
+
+<p>Please address any questions to the seminar convenor, Professor Amma Panin
+  ammapanin@uclouvain.com </p>
+
+
+    {% next_button %}
+
+{% endblock %}

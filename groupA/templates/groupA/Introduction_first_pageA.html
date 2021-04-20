@@ -1,0 +1,58 @@
+{% extends "groupA_experiment/Base.html" %}
+{% load otree %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Section 1: Instructions
+{% endblock %}
+
+{% block content %}
+
+    {% tracking_time %}  
+    {% tracking_focus %}
+
+<div class="box effect7">
+      <font size="4">
+      <p align="justify">
+      <p>For the purpose of this study, we are going to ask you to choose between two portfolios.<p> 
+      
+      <p>Each portfolio is composed of 20 different stocks. The riskiness level of both portfolios is the same, therefore you do not need to take that into account.
+	  In each step you need to select between a "Portfolio 1" and a "Portfolio 2".<p> 
+
+	  <p> You will have some information regarding both portfolio choices - you will know the return you would earn each year by choosing it as well as the environmental score of
+	  each of the portfolios. The environmental score of a portfolio is the average score of 20 environmental scores of each stock that is included in the portfolio. <p>
+	  
+    <p>
+        Click on the Next button to continue reading instructions.
+    </font>
+    </p>
+    <input type="hidden" name="time" value=0 id="id_my_times">
+  <div>
+    <br>
+    <input class="btn btn-primary btn-large btn-primary next-button" type="submit" onclick="fin()" value="Next">
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+  <script type="text/javascript">
+
+
+    var elapsed = 0;
+    var debut = new Date();
+    
+    function fin() {
+
+      var elapsed_ml =  (new Date() - debut)/1000;  // Exprimer en secondes plutôt qu'en milli-secondes
+      elapsed = Math.floor(0.5 + elapsed_ml); 
+      document.getElementById('id_my_times').value = elapsed;
+//      document.getElementById('form').submit();    // Inutile d'ajouter ceci ; ce ne serait utile que si on avait un truc du genre <button type='button' onclick="fin()">...
+
+    }
+    
+  </script>
+
+{% endblock %}

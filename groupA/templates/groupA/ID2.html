@@ -1,0 +1,273 @@
+{% extends "groupA/Base.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+   
+{% endblock %}
+
+{% block content %}
+    
+    <div id="Question2">
+    <font size="4">
+{% formfield player.Q2_envscore80_R with label="Please choose between these two portfolios:" %}
+    </font>
+    </div>
+    
+    <div id="next2">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif2()">
+    </div>
+    
+    <div id="Question3">
+    <font size="4">
+{% formfield player.Q3_envscore65_R with label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+    <div id="next3">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif3()">
+    </div>
+
+    <div id="Question4">
+    <font size="4">    
+{% formfield player.Q4_envscore50_R with label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+    <div id="next4">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif4()">
+    </div>
+    
+    
+    <div id="Question5">
+    <font size="4">     
+{% formfield player.Q5_envscore35_R with label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+<div id="next5">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif5()">
+    </div>
+
+    <div id="Question6">
+    <font size="4">     
+{% formfield player.Q6_envscore20_R with label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+<div id="next6">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif6()">
+    </div>
+
+    <div id="Question7">
+    <font size="4">     
+{% formfield player.Q7_envscore5_R with label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+    <div id="next">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="next_page()">
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+  
+  function hide(id_name) {document.getElementById(id_name).style.visibility = "hidden" }
+  function show(id_name) {document.getElementById(id_name).style.visibility = "visible" }
+  
+  window.onload = function () { hide("Question3"); hide("next3"); hide("Question4"); hide("next4"); hide("Question5"); hide("next5"); hide("Question6"); hide("next6"); hide("Question7"); hide("next")};
+  
+  //function verif(){
+    //var decision = $("#id_Q1_R_0").is(":checked");
+    //console.log($("#id_Q1_R_0").is(":checked"));
+    //if(decision) {
+        //show("Question2");
+        //show("next2");
+        //hide("Question3");
+        //hide("Question4");
+        //hide("Question5");
+		//hide("Question6");
+		//hide("Question7");
+        //hide("next3");
+        //hide("next4");
+		//hide("next5");
+		//hide("next6");
+        
+        //return true;
+    //} else {
+//        alert("Value of decision: " + $("#id_Q1_R_0").is(":checked"));
+        //form["Q2_envscore80_R"].value = 2;
+        //form["Q3_envscore65_R"].value = 2;
+        //form["Q4_envscore50_R"].value = 2;
+        //form["Q5_envscore35_R"].value = 2;
+		//form["Q6_envscore20_R"].value = 2;
+		//form["Q7_envscore5_R"].value = 2;
+        //document.getElementById("form").submit();
+        //return true;
+    //}
+  //}
+
+  function verif2(){
+    var decision = $("#id_Q2_envscore80_R_0").is(":checked");
+    console.log($("#id_Q2_envscore80_R_0").is(":checked"));
+    if(decision) {
+        show("Question3");
+        hide("Question4");
+        hide("Question5");
+		hide("Question6");
+		hide("Question7");
+        hide("next4");
+		hide("next5");
+		hide("next6");
+        show("next3");
+        return true;
+    } else {
+        if ($("#id_Q2_envscore80_R_1").is(":checked")) {
+            form["Q3_envscore65_R"].value = 2;
+            form["Q4_envscore50_R"].value = 2;
+			form["Q5_envscore35_R"].value = 2;
+			form["Q6_envscore20_R"].value = 2;
+			form["Q7_envscore5_R"].value = 2;
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+  
+    function verif3(){
+    var decision = $("#id_Q3_envscore65_R_0").is(":checked");
+    console.log($("#id_Q3_envscore65_R_0").is(":checked"));
+    if(decision) {
+        show("Question4");
+		hide("Question5");
+		hide("Question6");
+		hide("Question7");
+		hide("next5");
+		hide("next6");
+        show("next4");
+       
+        return true;
+    } else {
+        if ($("#id_Q3_envscore65_R_1").is(":checked")) {
+            form["Q4_envscore50_R"].value = 2;
+			form["Q5_envscore35_R"].value = 2;
+			form["Q6_envscore20_R"].value = 2;
+			form["Q7_envscore5_R"].value = 2;
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+  
+      function verif4(){
+    var decision = $("#id_Q4_envscore50_R_0").is(":checked");
+    console.log($("#id_Q4_envscore50_R_0").is(":checked"));
+    if(decision) {
+        show("Question5");
+		hide("Question6");
+		hide("Question7");
+		hide("next6");
+        show("next5");
+       
+        return true;
+    } else {
+        if ($("#id_Q4_envscore50_R_1").is(":checked")) {
+            form["Q5_envscore35_R"].value = 2;
+			form["Q6_envscore20_R"].value = 2;
+			form["Q7_envscore5_R"].value = 2;            
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+
+function verif5(){
+    var decision = $("#id_Q5_envscore35_R_0").is(":checked");
+    console.log($("#id_Q5_envscore35_R_0").is(":checked"));
+    if(decision) {
+        show("Question6");
+		hide("Question7");
+        show("next6");
+       
+        return true;
+    } else {
+        if ($("#id_Q5_envscore35_R_1").is(":checked")) {
+			form["Q6_envscore20_R"].value = 2;
+			form["Q7_envscore5_R"].value = 2;            
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+
+function verif6(){
+    var decision = $("#id_Q6_envscore20_R_0").is(":checked");
+    console.log($("#id_Q6_envscore20_R_0").is(":checked"));
+    if(decision) {
+        show("Question7");
+        show("next");
+       
+        return true;
+    } else {
+        if ($("#id_Q6_envscore20_R_1").is(":checked")) {
+			form["Q7_envscore5_R"].value = 2;            
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+
+  function next_page(){
+        if ($("#id_Q7_envscore5_R_0").is(":checked") || $("#id_Q7_envscore5_R_1").is(":checked")) {
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+  }
+
+</script>
+
+{% endblock %}  
+
+       
+

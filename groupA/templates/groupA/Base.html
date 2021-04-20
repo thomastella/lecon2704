@@ -1,0 +1,197 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree %}
+
+{% block app_styles %}
+
+  <style type="text/css">
+    
+    #cadre {
+      position: relative;
+      top: -10px;
+      left: 0px; 
+      width: 1000px;
+    }
+
+    .prix {
+      float: left;
+      width: 550px; /* 650px avant de passer aux prix de Weber & Camerer (1998) */ 
+      height: 300px;
+    }
+
+    .pf {
+      float: left;
+      width: 390px; /* 450px avant de passer aux prix de Weber & Camerer (1998) */ 
+      height: 300px;
+    }
+
+    .bas {
+      position: static;
+      width: 1000px;
+    }
+
+    .decisions {
+      width: 730px;
+    }
+    
+    .decisions th {
+      padding: 3px;
+    }
+
+    .decisions td {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+
+    #cash {
+      position: relative;
+      top: -205px;
+      left: 740px;
+      width: 270px;
+      border-style: solid;
+      padding: 10px;
+      text-align:center;
+    }
+/*    
+    .attentes {
+      width: 1000px;
+      margin-left: auto; 
+      margin-right: auto;
+    }
+
+    .attentes th {
+      padding: 3px;
+    }
+
+    .attentes td {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+*/
+    .associations {
+      position: static;
+      width: 700px;
+    }
+
+    .ptf_fin {
+      float: left;
+      width: 300px;
+    }
+    
+    .ptf_fin th {
+      padding: 6px;
+    }
+
+    .ptf_fin td {
+      padding: 2px;
+    }
+
+    #distr_effect {
+      float: left;
+      width: 450px;
+      height: 350px;
+    }
+    
+    .fin {
+      float: left;
+/*      font-weight: 800;*/
+      width: 550px;
+      margin-left: 70px;
+      margin-right: 20px;
+      border-style: solid;
+      padding: 12px;
+    }
+    
+    .merci {
+      font-size: x-large;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .merci #consignes {
+      style=color: red;
+      font-weight: 900;
+    }
+    
+    .page-header, #instruc {  /* Pour remonter les titres - On réduit la marge top */
+      margin: 0px 0 20px;
+      padding-top: 0px !important;
+    }
+    
+    [id^='id_quantity'] {  /* Pour réduire la hauteur des lignes dans le tableau de décisions */
+      margin-top: 0px !important;
+      margin-bottom: 0px !important; /* Rémi avait mis margin: 0px; */
+      height: 30px !important;
+    }
+    
+    div.form-group{   /* Ajouté par Rémi - Semble concerner tous les champs de saisie (form) dans la section div */
+      margin-top: 1px !important; margin-bottom: 1px !important; /* Rémi avait mis margin: 0px; A quoi sert !important ? */
+    }
+
+    input{            /* Ajouté par Rémi pour limiter la hauteur des lignes concernées par une saisie */
+      margin-bottom: 0px !important;
+    }
+
+    #vScroll {
+      width:880px;
+      height: 295px;
+      overflow-x: none;
+      overflow-y: auto;
+    }
+
+    #vScroll table {
+      background-color: lavender;
+      border: 1;
+      border-collapse: collapse;
+      line-height: 20px;
+      table-layout:fixed;
+      word-wrap:break-word
+    }
+    
+    #vScroll > table, th, td{
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    #vScroll thead {position: absolute; margin-top: -42px; background-color: lavender;}
+    #vScroll tr {text-align: center;}
+    #vScroll th {border-style: none none solid none; text-align: center;}
+    #vScroll td {border-style: none; text-align: center;}
+
+    
+    #cognition {
+      width: 880px;
+    }
+
+    #cognition table {
+      background-color: lavender;
+      border: 1;
+      border-collapse: collapse;
+      line-height: 20px;
+      table-layout:fixed;
+      word-wrap:break-word
+    }
+
+    #cognition tr {text-align: center;}
+    #cognition th {border-style: none none solid none; text-align: center;}
+    #cognition td {border-style: none; text-align: center;}
+  
+/*    #rwa {
+      width: 940px;
+    }
+*/
+    #rwa table {
+      background-color: lavender;
+      border: 1;
+      border-collapse: collapse;
+      line-height: 20px;
+      table-layout:fixed;
+      word-wrap:break-word
+    }
+
+    #rwa tr {text-align: center;}
+    #rwa th {border-style: none none solid none; text-align: center;}
+    #rwa td {border-style: none; text-align: center;}
+
+  </style>
+
+{% endblock %}
