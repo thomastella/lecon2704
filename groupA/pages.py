@@ -69,7 +69,7 @@ class ID0NN(Page):
 
 class ID(Page):
     
-  form_model = models.Player
+  form_model = 'player'
   form_fields = [ 'Q1',]
   def is_displayed(self):  
     rest = self.player.id_in_group % 2
@@ -77,7 +77,7 @@ class ID(Page):
     
 class ID1(Page):
     
-  form_model = models.Player
+  form_model = 'player'
   form_fields = ['Q2_r6_increase_L', 'Q3_r7_increase_L', 'Q4_r8_increase_L',]
   def is_displayed(self):  
     rest = self.player.id_in_group % 2
@@ -87,7 +87,7 @@ class ID1(Page):
     
 class ID2(Page):
     
-  form_model = models.Player
+  form_model = 'player'
   form_fields = ['Q2_envscore80_R', 'Q3_envscore65_R', 'Q4_envscore50_R', 'Q5_envscore35_R', 'Q6_envscore20_R', 'Q7_envscore5_R', ]
   def is_displayed(self):  
     rest = self.player.id_in_group % 2
@@ -102,7 +102,7 @@ class Questionnaire(Page):
   #   return ["By donating", "By volunteering", "By investing/divesting accordingly", 
   #                "By flying less", "By taking public transport instead of a car", "By reducing the intake of animal products in my diet", "By buying my clothes in second-hand stores", "None of the mentioned"]  
   
-  form_model = models.Player
+  form_model = 'player'
   form_fields = [ #'Env_q_individual',
                   #'Env_question',
                   'Financial_literacya',
