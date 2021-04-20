@@ -1,14 +1,21 @@
 #-*- coding: utf-8 -*-
 # <standard imports>
-from __future__ import division
-from otree.db import models
-from otree.constants import BaseConstants
-from otree.models import BaseSubsession, BaseGroup, BasePlayer
-# from django_countries.fields import CountryField
-# from django_languages.fields import LanguageField
-# from django.conf.global_settings import LANGUAGES
-# from likert_field.models import LikertField
-# from otree_tools.models import fields as tool_models
+# from __future__ import division
+# from otree.db import models
+# from otree.constants import BaseConstants
+# from otree.models import BaseSubsession, BaseGroup, BasePlayer
+# # from django_countries.fields import CountryField
+# # from django_languages.fields import LanguageField
+# # from django.conf.global_settings import LANGUAGES
+# # from likert_field.models import LikertField
+# # from otree_tools.models import fields as tool_models
+
+
+from otree.api import (
+    models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
+    Currency as c, currency_range, Page, WaitPage
+)
+
 import random
 
 
