@@ -19,9 +19,9 @@ from otree.api import (
 import random
 
 
-from otree import widgets
-from otree.common import Currency as c
-import random
+#from otree import widgets
+#from otree.common import Currency as c
+#import random
 # </standard imports>
 
 doc = """
