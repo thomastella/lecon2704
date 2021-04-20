@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
-from __future__ import division
-from . import models
-from ._builtin import Page, WaitPage
-from otree.common import Currency as c#, currency_range
-from .models import Constants
-import time
-from decimal import Decimal
-import random
+# from __future__ import division
+# from . import models
+# from ._builtin import Page, WaitPage
+# from otree.common import Currency as c#, currency_range
+# from .models import Constants
 
+# import time
+# from decimal import Decimal
+# import random
+from .models import *
 
 def vars_for_all_templates(self):
   return {
