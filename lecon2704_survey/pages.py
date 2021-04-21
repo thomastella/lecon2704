@@ -13,4 +13,8 @@ class SurveyPage(Page):
                    'marital',
                    'residency']
 
-page_sequence = [SurveyPage]
+class EndPage(Page):
+    pass
+
+page_sequence = [SurveyPage,
+                 EndPage]

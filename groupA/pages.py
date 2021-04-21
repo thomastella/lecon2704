@@ -5,9 +5,9 @@
 # from otree.common import Currency as c#, currency_range
 # from .models import Constants
 
-# import time
-# from decimal import Decimal
-# import random
+from decimal import Decimal
+import random
+import time
 from .models import *
 
 def vars_for_all_templates(self):
@@ -34,10 +34,10 @@ class Introduction_second_page(Page):
     
   def is_displayed(self):
     return self.subsession.round_number == 1
-    
+
+
     
 class ID0P(Page):
-  
   def before_next_page(self):
     self.player.time_video_page_leave = time.time()
     
